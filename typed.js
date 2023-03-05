@@ -15,7 +15,7 @@ function typed (name,description,img){
       arr.length = cont;
       window.a.innerHTML = "";
       window.a.innerHTML += `
-      <img style="display:block;margin: 0 auto;border-radius: 10px" src="${img}" alt="not found image" height="100" width="100"/>
+      <img style="display:block;margin: 0 auto;border-radius: 10px" src="${img}" alt="not found image" height="120" width="120"/>
       <h2 style='text-align:center;'>I am <span style='color:blue;'>${name}</span>: <span style='color:red'>${arr.join("")}</span></h2>`;
     }if (cont == 0){
       new_user += user_description[tracker];
@@ -39,7 +39,7 @@ function typed (name,description,img){
       tracker++;
       window.a.innerHTML = "" ;
       window.a.innerHTML = `
-      <img style="display:block;margin: 0 auto;border-radius: 10px;" src="${img}" alt="not found image" height="100" width="100"/>
+      <img style="display:block;margin: 0 auto;border-radius: 10px;" src="${img}" alt="not found image" height="120" width="120"/>
       <h2 style='text-align:center'>I am <span style='color:blue;'>${name}</span>: <span style='color:red'>${new_user}</span></h2>
       `;
       
