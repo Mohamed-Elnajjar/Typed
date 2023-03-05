@@ -30,8 +30,11 @@ function typed (name,description,img){
           typed("Omr","Backend Developer",'./images/omr.jpg');
         }
         
-        console.log(counter);
         if(counter == 3){
+          typed("Momen","Frontend Developer",'./images/momen.jpg');
+        }
+        
+        if(counter == 4){
           typed("Mohamed","Fullstack Developer",'./images/mohamed.jpg');
           counter = 0;
         }
