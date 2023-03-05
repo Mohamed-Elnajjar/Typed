@@ -1,43 +1,50 @@
-var counter = 0;
-function typed (name,description){
-  var Name = ` ${description} `;
-  var arr = Name.split('');
-  var cont = arr.length;
-  var new_user = "";
-  var user = ` ${description}`;
-  var tracker = 0;
+let counter = 0;
+function typed (name,description,img){
+// variables
+  const Name = ` ${description} `;
+  let arr = Name.split('');
+  let cont = arr.length;
+  let new_user = "";
+  const user_description = ` ${description}`;
+  let tracker = 0;
   
-  var x = setInterval(() => {
+  // stop function
+  const x = setInterval(() => {
     if(cont > 0){
       cont--
       arr.length = cont;
       window.a.innerHTML = "";
-      window.a.innerHTML += `<h2 style='text-align:center;'>I am <span style='color:blue;'>${name}</span>: ` + `<span style='color:red'>${arr.join("")}</span></h2>`;
+      window.a.innerHTML += `
+      <img style="display:block;margin: 0 auto;border-radius: 10px" src="${img}" alt="not found image" height="100" width="100"/>
+      <h2 style='text-align:center;'>I am <span style='color:blue;'>${name}</span>: <span style='color:red'>${arr.join("")}</span></h2>`;
     }if (cont == 0){
-      new_user += user[tracker];
-      if(new_user.length === user.length ){
+      new_user += user_description[tracker];
+      if(new_user.length === user_description.length ){
         clearInterval(x);
         counter++;
         if(counter == 1){
-          typed("Mohamed","Fullstack Developer");
+          typed("Ahmed","Frontend Developer",'./images/ahmed.jpg');
         }
-      
+        
         if(counter == 2){
-          typed("Omr","Backend Developer");
+          typed("Omr","Backend Developer",'./images/omr.jpg');
         }
-      
+        
         console.log(counter);
         if(counter == 3){
-          typed("Ahmed","Frontend Developer");
+          typed("Mohamed","Fullstack Developer",'./images/mohamed.jpg');
           counter = 0;
         }
       }
       tracker++;
       window.a.innerHTML = "" ;
-      window.a.innerHTML = `<h2 style='text-align:center'>I am <span style='color:blue;'>${name}</span>: ` + `<span style='color:red'>${new_user}</span></h2>`;
+      window.a.innerHTML = `
+      <img style="display:block;margin: 0 auto;border-radius: 10px;" src="${img}" alt="not found image" height="100" width="100"/>
+      <h2 style='text-align:center'>I am <span style='color:blue;'>${name}</span>: <span style='color:red'>${new_user}</span></h2>
+      `;
       
     }
   },300);
 }
 
-typed("Mohamed","Fullstack Developer");
+typed("Mohamed","Fullstack Developer",'./images/mohamed.jpg');
